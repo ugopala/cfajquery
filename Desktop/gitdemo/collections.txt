@@ -1,0 +1,249 @@
+single value ----->variable 
+multiple values of same datatype----->Array
+multiple values of any datatype----->object
+operations on group of objects ---->collection 
+collections are used to implement Datastructures in .net 
+Datastructure is used to store and manipulate data 
+in C#.net collections are implemented as classes 
+Different Types of Collction classes are:-
+1. ArrayList
+2. Stack
+3. Queue
+4. HashTable
+5. SortedList
+6. Dictionary
+All collection classes are available under System.Collections namespace 
+Interface:-Interface is a type which consists of public abstract methods and public abstract properties
+we cannot create object for interface but we can create Reference 
+Q)what methods we can access with interface     Reference?
+    with interface reference we can access the     implemented methods in Derived class
+ interface A
+ {
+    void Show();
+ }
+class B:A			A a1=new B();	
+{
+  public void Show()
+  {
+    C.WL("i am Show");
+  }
+}
+interface is used to achieve multiple inheritance
+points to remember:-
+1. in inheritance always create object for derived class
+2. whenever we create object for derived class then 
+     object is not created for base class
+3. whenever we create object for derived class then 
+    memory was allocated for base class and derived 
+    class instance variables 
+  class A
+  {
+     int x;			new B();
+     int y;
+  }
+  class B:A
+  {
+     int z;
+  }
+4. The derived class object can refer in 2 ways 
+     Baseclassname 
+     Derivedclassname
+     Every object must identify with some Reference 
+     Q)what is upcasting?
+          upcasting means subclass object assigned to           super class reference 
+     Q)when upcasting is recomended?
+       when single parent and multiple child exist then 
+       upcasting is recomended
+
+		A
+
+
+	     B           C             D		
+class A
+{
+     public void Show(){}
+}
+class B:A
+{
+     public void Display(){}
+}
+ object    reference    upcasting  overriding    syn
+  B             B                    No             No       B b1=new B();
+				b1.Show();
+				b1.Display();
+
+interface A
+{
+    void Show();
+}
+class B:A
+{
+   public void Show(){}
+}
+ object    reference    upcasting  overriding    syn
+  B             B                    No             No       B b1=new B();
+				b1.Show();
+				b1.Display();
+
+class A
+{
+  public virtual void Show(){  i am A show }
+}
+class B:A
+{
+   public override void Show( i am b show){}
+   public void Disp(){ i am display }
+}
+ object    reference    upcasting  overriding    syn
+  B             B                    No             yes      B b1=new B();
+				b1.Show();
+				b1.Display();
+o/p:- i am b show
+         i am display
+
+interface A
+{
+    void Show();
+}
+class B:A			class C:A
+{			{
+   public void Show(){}	   public void Show(){}
+}			}
+ object    reference    upcasting  overriding    syn
+not fixed  A                    Yes             No       A a1=new ---();	
+				a1.Show();
+if ----- is B o/p is i am b show
+if ----- is C o/p is i am c show
+abstract class A
+{
+   public abstract void Show();
+}
+class B:A			class C:A
+{			{
+public override void Show(){}  public override void 		                  Show(){}
+}			}
+ object    reference    upcasting  overriding    syn
+not fixed  A                    Yes             yes      A a1=new ---();	
+				a1.Show();
+class A
+{
+   public void Show()
+   {   i am show}
+}
+class B:A			class C:A	
+{			{
+   public void Disp()
+   {   i am  Disp }
+}			}				
+
+A a1=new B();
+   a1.Show();    valid
+   a1.Disp();      Error 
+ note:-with super class reference we cannot access   derived class methods
+ After upcasting without creating a new object if we  want to access derived classmethod we have to apply  Downcasting 
+ Q)what is Downcasting ?
+  Downcasting means super class reference assigned     to subclass Reference 
+   Rules to be followed while applying Downcasting:-
+    1. Upcasting is manadatory 
+    2. Typecasting is manadatory 
+	A a1=new B();     upcasting 
+	B b1=(B)a1;
+	b1.Show();
+	b1.Display();
+Method:- Method is a subprogram which is used to perform a specific operation 
+Method will gets executed when we call it 
+Method must have returntype 
+The returntype may be void or datatype
+if the returntype is void then method will not return any value 
+if the returntype is datatype then method will return some value 
+		Datatypes
+
+	Valuetype             Referencetype
+	byte		string
+	short		class
+	int		Array
+	long		interface
+	float		object
+	double
+	decimal
+	char
+	bool
+if the returnrtype is valuetype then method will return value 
+if the returnrtype is referencetype then method will return object or Reference 
+ returntype               returnvalue
+  void                         no return value 
+  int 		return integer value
+  float 		return floating point
+  char 		return single character 
+  class                          return object or reference 
+  superclass                return derivedclass object or ref
+  interface                    return derivedclass object or ref
+  absract class           return derivedclass object or ref
+note:- method must have returntype if the returntype is
+datatype then store the result of the method in variable 
+class A
+{
+    int x=5;
+    int y=3;
+   public static A Get()
+   {
+       A a1=new A();
+       return a1; 
+   }
+  static void Main()
+  {
+       A a=A.Get();
+       int sum=a.x+a.y;
+       Console.WriteLine(sum);
+  }  }
+=================================
+interface A
+{
+  void Show();
+  void Disp();
+}
+class B:A
+{
+ public void Show(){ i am show }
+ public void Disp(){ i am display}
+}
+class X
+{
+  static A Get()
+  {
+    B b1=new B();
+    return b1;
+  }
+ static void Main()
+ {
+    A a1=X.Get();
+        a1.Show();
+        a1.Disp();
+ }
+}
+================
+collections:-collections are used to implement datatsructures in .net 
+		IEnumerable 
+
+
+		ICollection
+
+
+	          IList               IDictionary
+
+
+	     ArrayList                HashTable 
+
+
+		
+
+
+
+
+
+
+
+
+
+
+
